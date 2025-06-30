@@ -1,19 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Providers from '@/lib/providers';
 import { Toaster } from 'sonner';
-import { jafBerninaSansNarrow } from './fonts';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { jafBerninaSansNarrow } from '@/app/fonts';
 
 export const metadata: Metadata = {
   title: 'XanoPay Private Sale',
@@ -26,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${jafBerninaSansNarrow.className} antialiased`}>
+    <html lang="en" className={`${jafBerninaSansNarrow.className}`}>
+      <body className={` antialiased`}>
         <Providers>{children}</Providers>
         <Toaster theme="dark" position="top-center" />
       </body>
