@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Providers from '@/lib/providers';
 import { Toaster } from 'sonner';
-// import { jafBerninaSansNarrow } from '@/app/fonts';
 import { Lato } from 'next/font/google';
 
 export const metadata: Metadata = {
