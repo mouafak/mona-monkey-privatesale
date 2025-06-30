@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "buildWithPrisma": "npx prisma generate && npx prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@dynamic-labs/sdk-react-core": "^4.20.9",
-    "@dynamic-labs/solana": "^4.20.9",
+    "@dynamic-labs/sdk-react-core": "^4.20.10",
+    "@dynamic-labs/solana": "^4.20.10",
     "@prisma/client": "^6.10.1",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-separator": "^1.1.7",
@@ -27,7 +28,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
-    "@types/node": "^24.0.7",
+    "@types/node": "^24.0.8",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "prisma": "^6.10.1",

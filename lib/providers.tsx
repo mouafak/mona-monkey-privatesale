@@ -4,10 +4,14 @@ import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core';
 import { SolanaWalletConnectors } from '@dynamic-labs/solana';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
-  const environmentId =
-    process.env.NODE_ENV == 'development'
-      ? '32530626-2529-48f0-88c5-a0aa35afdb0c'
-      : '0a193511-09f3-4fc2-a97a-c0aa81c5fa29';
+  // Utiliser une seule variable d'environnement basée sur NODE_ENV
+  const environmentId = process.env.NEXT_PUBLIC_DYNAMIC_ENV_ID as string;
+
+  // Vérification que l'environment ID est défini
+  if (!environmentId) {
+    console.error('NEXT_PUBLIC_DYNAMIC_ENV_ID is not defined');
+    return <div>Configuration error: Missing environment ID</div>;
+  }
   return (
     <DynamicContextProvider
       theme={'dark'}
