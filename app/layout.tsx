@@ -2,12 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Providers from '@/lib/providers';
 import { Toaster } from 'sonner';
-import { jafBerninaSansNarrow } from '@/app/fonts';
+// import { jafBerninaSansNarrow } from '@/app/fonts';
+import { Lato } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'XanoPay Private Sale',
   description: 'XanoPay Private Sale',
 };
+
+export const latoFont = Lato({
+  subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
+  variable: '--font-lato',
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -15,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jafBerninaSansNarrow.className}`}>
+    <html lang="en" className={``}>
       <body className={` antialiased`}>
         <Providers>{children}</Providers>
         <Toaster theme="dark" position="top-center" />
@@ -23,3 +31,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+// ${jafBerninaSansNarrow.className}
