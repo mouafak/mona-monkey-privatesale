@@ -33,10 +33,10 @@ const ConnectWalletButton = () => {
     'Buy Tokens' | 'Signing tx' | 'Sending SOL' | 'Confirming'
   >('Buy Tokens');
 
-  const treasuryAddress =
-    process.env.NODE_ENV === 'development'
-      ? 'BTB9qTXEf6z9oYEdsCv6nm9AbCgAbX46o6ekHCwUTfkD'
-      : '8Qm6YqtzrRZXNbghw4v79XqUC4rmkq9WrsGA2pQ3zMEG';
+  const treasuryAddress = process.env.NEXT_PUBLIC_TREASURY_ADDRESS;
+
+  if (!treasuryAddress)
+    throw new Error('Treasury address is not defined in environment variables');
 
   // 8Qm6YqtzrRZXNbghw4v79XqUC4rmkq9WrsGA2pQ3zMEG
 

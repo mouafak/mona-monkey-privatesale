@@ -22,7 +22,7 @@ const SolanaInput = () => {
     setZodError: setZodErrorContext,
   } = useContext(PrivateSaleContext) as privateSaleContextType;
 
-  const solMinValue = process.env.NODE_ENV == 'development' ? 0.01 : 0.5;
+  const solMinValue = process.env.NODE_ENV == 'development' ? 0.01 : 0.01;
 
   const schema = z
     .number({
