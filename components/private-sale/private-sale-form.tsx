@@ -41,7 +41,7 @@ const PrivateSaleForm = () => {
           <div className="flex flex-col justify-center gap-1 relative">
             <SolanaInput />
             <TokenInput />
-            <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/2 flex-center bg-foreground p-1 border border-neutral-700">
+            <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-center bg-foreground p-1 border border-neutral-700">
               <ArrowRight className=" w-5 h-5 rotate-90 text-accent" />
             </div>
             {/* <div>

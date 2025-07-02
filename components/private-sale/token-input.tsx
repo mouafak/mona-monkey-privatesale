@@ -11,7 +11,7 @@ const TokenInput = () => {
   ) as privateSaleContextType;
 
   useEffect(() => {
-    const mskAmount = Number(solValue) * 10000;
+    const mskAmount = Number(solValue) * 1500;
     setTokenValue(mskAmount.toFixed(0));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
