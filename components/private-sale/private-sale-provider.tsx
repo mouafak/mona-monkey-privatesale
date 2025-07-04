@@ -9,6 +9,8 @@ const PrivateSaleProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
   const [zodError, setZodError] = useState(false);
   const [refetchBalance, setRefetchBalance] = useState(false);
   // const [piWalletAddress, setPiWalletAddress] = useState('');
+  const [affiliateCode, setAffiliateCode] = useState<string | null>(null);
+  const [canRequestAffiliateCode, setCanRequestAffiliateCode] = useState(false);
   return (
     <PrivateSaleContext.Provider
       value={{
@@ -24,6 +26,10 @@ const PrivateSaleProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
         setRefetchBalance,
         // piWalletAddress,
         // setPiWalletAddress,
+        affiliateCode,
+        setAffiliateCode,
+        canRequestAffiliateCode,
+        setCanRequestAffiliateCode,
       }}
     >
       {children}

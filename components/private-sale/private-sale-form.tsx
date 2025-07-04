@@ -4,14 +4,12 @@ import TokenInput from './token-input';
 import { ArrowRight } from 'lucide-react';
 import PrivateSaleProvider from './private-sale-provider';
 import ConnectButton from './connect-button';
-import { Separator } from '../ui/separator';
 import Balance from './get-balance';
 import DisconnectBtn from './disconnect-button';
 import BuyButton from '@/components/private-sale/buy-button';
 import CountdownTimer from '@/components/private-sale/count-down';
-import Image from 'next/image';
-import Only100KLogo from '@/public/100kLogoBLue.png';
 import { XanopayLogo } from '../xanopay-logos';
+import Affiliate from '../affiliate/affiliate-user';
 // import PiInput from './PiInput';
 
 const PrivateSaleForm = () => {
@@ -51,6 +49,7 @@ const PrivateSaleForm = () => {
           </div>
           <ConnectButton />
           <BuyButton />
+          <Affiliate />
           <DisconnectBtn />
         </div>
       </div>

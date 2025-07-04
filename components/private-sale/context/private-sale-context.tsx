@@ -13,6 +13,10 @@ export interface privateSaleContextType {
   setRefetchBalance: React.Dispatch<React.SetStateAction<boolean>>;
   // piWalletAddress: string;
   // setPiWalletAddress: React.Dispatch<React.SetStateAction<string>>;
+  affiliateCode: string | null;
+  setAffiliateCode: React.Dispatch<React.SetStateAction<string | null>>;
+  canRequestAffiliateCode: boolean;
+  setCanRequestAffiliateCode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const PrivateSaleContext = createContext<privateSaleContextType | null>(null);

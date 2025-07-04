@@ -1,5 +1,5 @@
 'use client';
-import { getBalanceByWalletAddress } from '@/app/actions';
+import { getAffiliateUser, getBalanceByWalletAddress } from '@/app/actions';
 import { useDynamicContext } from '@dynamic-labs/sdk-react-core';
 import { useContext, useEffect, useState } from 'react';
 import PrivateSaleContext, {
@@ -13,9 +13,28 @@ const Balance = () => {
   const [balance, setBalance] = useState<string>('0');
   const { primaryWallet } = useDynamicContext();
 
-  const { refetchBalance, setRefetchBalance } = useContext(
-    PrivateSaleContext
-  ) as privateSaleContextType;
+  const {
+    refetchBalance,
+    setRefetchBalance,
+    setCanRequestAffiliateCode,
+    setAffiliateCode,
+  } = useContext(PrivateSaleContext) as privateSaleContextType;
+
+  // check if the user has an affiliate code
+  const checkAffiliateCode = async () => {
+    if (!primaryWallet || !primaryWallet.address) return;
+    try {
+      const affiliateUser = await getAffiliateUser(primaryWallet.address);
+      if (affiliateUser && affiliateUser.affiliateCode) {
+        setAffiliateCode(affiliateUser.affiliateCode);
+      } else {
+        setAffiliateCode(null);
+        setCanRequestAffiliateCode(true);
+      }
+    } catch (error) {
+      console.error('Error checking affiliate code:', error);
+    }
+  };
 
   const getBalanceFromDB = async () => {
     if (!primaryWallet || !primaryWallet.address) {
@@ -28,6 +47,7 @@ const Balance = () => {
         return acc + Number(curr.tokenValue);
       }, 0);
       setBalance(balanceCalculated.toFixed(0));
+      await checkAffiliateCode();
     }
   };
 

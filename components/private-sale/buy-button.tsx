@@ -15,6 +15,7 @@ import PrivateSaleContext, {
   privateSaleContextType,
 } from '@/components/private-sale/context/private-sale-context';
 import { set } from 'zod';
+import { useSearchParams } from 'next/navigation';
 
 const ConnectWalletButton = () => {
   const { solValue, tokenValue, zodError, setRefetchBalance } = useContext(
@@ -37,6 +38,9 @@ const ConnectWalletButton = () => {
 
   if (!treasuryAddress)
     throw new Error('Treasury address is not defined in environment variables');
+
+  //  affiliate code from URL
+  const affCode = useSearchParams().get('code');
 
   // 8Qm6YqtzrRZXNbghw4v79XqUC4rmkq9WrsGA2pQ3zMEG
 
@@ -144,6 +148,7 @@ const ConnectWalletButton = () => {
         solanaValue: solValue,
         tokenValue: tokenValue,
         txHash: signature,
+        affiliateCode: affCode || undefined,
       });
 
       toast.success('Transaction sent successfully');
