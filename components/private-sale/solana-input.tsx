@@ -63,7 +63,7 @@ const SolanaInput = () => {
         <span className="text-white text-sm font-semibold">You pay</span>
         <div className="flex items-center">
           <span className="text-background text-sm font-semibold">
-            1 SOL = 10 000
+            1 SOL = 1500
           </span>
           <XanopayLogoX className="w-auto !h-4 ml-1" />
         </div>

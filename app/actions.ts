@@ -25,6 +25,15 @@ export const createNewPrivateSale = async ({
     if (solanaValue == "0" || solanaValue == "0") {
         throw new Error("Solana value is required");
     }
+    let verifiedAffiliateCode: string | undefined = undefined;
+
+    if (affiliateCode && affiliateCode !== "" && affiliateCode !== "undefined") {
+        const verifying = await findAffiliateUserByCode(affiliateCode);
+        verifying
+            ? (verifiedAffiliateCode = affiliateCode)
+            : (verifiedAffiliateCode = undefined);
+
+    }
 
     const res = await prisma.privateSale.create({
         data: {
@@ -32,13 +41,13 @@ export const createNewPrivateSale = async ({
             solanaValue,
             tokenValue,
             txHash,
-            AffiliateUser: affiliateCode && affiliateCode !== "" ? {
+            AffiliateUser: verifiedAffiliateCode ? {
                 connect: {
-                    affiliateCode: affiliateCode || "",
+                    affiliateCode: verifiedAffiliateCode,
                 }
             }
                 : undefined,
-            affiliateUserProfit: affiliateCode ? calculateProfit(solanaValue) : undefined,
+            affiliateUserProfit: verifiedAffiliateCode ? calculateProfit(solanaValue) : undefined,
         },
     });
 
@@ -70,11 +79,11 @@ export const getAffiliateUser = async (walletAddress: string) => {
     }
 };
 
-export const findAffiliateUserByCode = async (affiliateCOde: string) => {
+export const findAffiliateUserByCode = async (affiliateCode: string) => {
     try {
         const affiliateUser = prisma.affiliateUser.findUnique({
             where: {
-                affiliateCode: affiliateCOde,
+                affiliateCode: affiliateCode,
             },
         });
         return affiliateUser;
