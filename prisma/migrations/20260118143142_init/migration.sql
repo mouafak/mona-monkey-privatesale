@@ -2,7 +2,7 @@
 CREATE TABLE `PrivateSale` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `walletAddress` VARCHAR(191) NOT NULL,
-    `price` VARCHAR(191) NOT NULL DEFAULT '10000',
+    `price` VARCHAR(191) NOT NULL DEFAULT '10M',
     `solanaValue` VARCHAR(191) NOT NULL,
     `tokenValue` VARCHAR(191) NOT NULL,
     `txHash` MEDIUMTEXT NOT NULL,

@@ -131,10 +131,10 @@ const Affiliate = () => {
               {affiliateCode ? (
                 <div className="flex gap-2 w-full">
                   <p className="text-sm bg-secondary px-2 py-1 rounded-sm flex justify-center items-center w-full">
-                    {`https://privatesale.xanopay.com?code=${affiliateCode}`}
+                    {`https://privatesale.monamonkey.com?code=${affiliateCode}`}
                   </p>
                   <CopyToClipboardButton
-                    textToCopy={`https://privatesale.xanopay.com?code=${affiliateCode}`}
+                    textToCopy={`https://privatesale.monamonkey.com?code=${affiliateCode}`}
                   />
                 </div>
               ) : !affiliateCode && canRequestAffiliateCode ? (

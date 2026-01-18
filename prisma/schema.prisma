@@ -17,7 +17,7 @@ datasource db {
 model PrivateSale {
   id                  Int            @id @default(autoincrement())
   walletAddress       String
-  price               String         @default("10000")
+  price               String         @default("10M")
   solanaValue         String
   tokenValue          String
   txHash              String         @db.MediumText

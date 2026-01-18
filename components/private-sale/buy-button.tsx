@@ -121,10 +121,8 @@ const ConnectWalletButton = () => {
           isConfirmed.value &&
           isConfirmed.value.confirmationStatus === 'confirmed'
         ) {
-          // console.log('Transaction confirmed');
           break;
         }
-        // console.log('Polling for confirmation', isConfirmed);
       } // end while
 
       setButtonText('Confirming');

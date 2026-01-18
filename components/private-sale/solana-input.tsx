@@ -80,9 +80,9 @@ const SolanaInput = () => {
         pattern="^\d*\.?\d{0,2}$"
         type="number"
         inputMode="decimal"
-        className=" h-16 m-0 bg-transparent rounded-none text-foreground !text-4xl font-display font-medium outline-none border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus-visible:border-none focus-visible:ring-0"
+        className=" h-10 m-0 px-2 bg-transparent rounded-none text-foreground !text-4xl font-display font-medium outline-none border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus-visible:border-none focus-visible:ring-0 shadow-none"
       />
-      <p className="text-[11px] text-red-500 h-4 absolute bottom-1 ">
+      <p className="text-[11px] text-red-500 h-4 absolute bottom-0.5 ">
         {zodError}
       </p>
       <div className="top-2/3 -translate-y-2/3 right-4 absolute p-2 w-10 h-10 border border-accent/50 rounded-full flex-center">
