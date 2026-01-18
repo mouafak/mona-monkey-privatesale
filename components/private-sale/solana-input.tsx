@@ -8,8 +8,7 @@ import PrivateSaleContext, {
 import Image from 'next/image';
 import SolanaLogo from '@/public/solanaLogo.png';
 import { useIsLoggedIn } from '@dynamic-labs/sdk-react-core';
-import Only100KLogo from '@/public/100kLogoBLue.png';
-import { XanopayLogoX } from '../xanopay-logos';
+import MonaMonkeyLogo from '@/public/MonaMonkeyLogo.png';
 // import { useAccount, useBalance } from "wagmi";
 
 const SolanaInput = () => {
@@ -58,14 +57,15 @@ const SolanaInput = () => {
   }, [isConnected]);
 
   return (
-    <div className=" relative flex flex-col bg-neutral-00 p-2 h-24 border border-neutral-700">
+    <div className=" relative flex flex-col bg-white p-2 h-24 rounded-lg">
       <div className="flex-center justify-between mb-2">
-        <span className="text-white text-sm font-semibold">You pay</span>
+        <span className="text-foreground text-sm font-semibold">You pay</span>
         <div className="flex items-center">
-          <span className="text-background text-sm font-semibold">
+          <span className="text-foreground text-sm font-semibold">
             1 SOL = 1500
           </span>
-          <XanopayLogoX className="w-auto !h-4 ml-1" />
+          {/* <XanopayLogoX className="w-auto !h-4 ml-1" /> */}
+            <Image src={MonaMonkeyLogo} alt="MonaMonkeyLogo" className="w-auto !h-4 ml-1" />
         </div>
       </div>
       <Input
@@ -80,12 +80,12 @@ const SolanaInput = () => {
         pattern="^\d*\.?\d{0,2}$"
         type="number"
         inputMode="decimal"
-        className=" h-16 m-0 bg-transparent rounded-none text-white !text-4xl font-display font-medium outline-none border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus-visible:border-none focus-visible:ring-0"
+        className=" h-16 m-0 bg-transparent rounded-none text-foreground !text-4xl font-display font-medium outline-none border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none focus-visible:border-none focus-visible:ring-0"
       />
       <p className="text-[11px] text-red-500 h-4 absolute bottom-1 ">
         {zodError}
       </p>
-      <div className="top-2/3 -translate-y-2/3 right-4 absolute p-2 w-10 h-10 border border-neutral-700 rounded-full flex-center">
+      <div className="top-2/3 -translate-y-2/3 right-4 absolute p-2 w-10 h-10 border border-accent/50 rounded-full flex-center">
         <Image src={SolanaLogo} alt="Solana logo" className="w-auto h-auto " />
       </div>
       {/* <div className=" absolute top-2/3 -translate-y-2/3 right-16 text-white ">

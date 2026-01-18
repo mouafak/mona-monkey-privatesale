@@ -10,19 +10,24 @@ import BuyButton from '@/components/private-sale/buy-button';
 import CountdownTimer from '@/components/private-sale/count-down';
 import { XanopayLogo } from '../xanopay-logos';
 import Affiliate from '../affiliate/affiliate-user';
+import MonaMonkeyLogo from '@/public/MonaMonkeyLogo.png';
+import Image from 'next/image';
 // import PiInput from './PiInput';
 
 const PrivateSaleForm = () => {
   return (
     <PrivateSaleProvider>
       <div className="w-96 p-1 flex flex-col gap-2">
-        <div className=" bg-foreground">
+        {/* <div className=" bg-background rounded-lg">
           <CountdownTimer targetDate="2025-08-16T19:59:59" />
-        </div>
-        <div className="w-full h-full bg-foreground p-6 flex flex-col justify-between gap-4">
+        </div> */}
+        <div className="w-full h-full bg-background p-6 flex flex-col justify-between gap-4 rounded-lg">
           <div className=" relative flex-center flex-col gap-4 mb-4">
-            <XanopayLogo className="!w-auto !h-14 " />
-            <p className="text-[10px] uppercase text-accent font-display tracking-widest font-semibold absolute right-17 bottom-0">
+            <div className="flex-center gap-2">
+            <Image src={MonaMonkeyLogo} alt="MonaMonkeyLogo" className="w-20 h-autto md:w-18 md:h-auto" />
+            <h2 className="text-foreground text-xl font-bold">Mona Monkey</h2>
+            </div>
+            <p className="text-[10px] uppercase text-accent font-display tracking-widest font-semibold absolute right-27 bottom-0">
               Private Sale
             </p>
             {/* <div>
@@ -39,7 +44,7 @@ const PrivateSaleForm = () => {
           <div className="flex flex-col justify-center gap-1 relative">
             <SolanaInput />
             <TokenInput />
-            <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-center bg-foreground p-1 border border-neutral-700">
+            <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-center bg-background p-1 border border-accent/50 rounded-full">
               <ArrowRight className=" w-5 h-5 rotate-90 text-accent" />
             </div>
             {/* <div>

@@ -6,8 +6,7 @@ import PrivateSaleContext, {
   privateSaleContextType,
 } from './context/private-sale-context';
 import Image from 'next/image';
-import Only100KLogo from '@/public/100kLogoBLue.png';
-import { XanopayLogoX } from '../xanopay-logos';
+import MonaMonkeyLogo from '@/public/MonaMonkeyLogo.png';
 
 const Balance = () => {
   const [balance, setBalance] = useState<string>('0');
@@ -65,20 +64,21 @@ const Balance = () => {
   }, [refetchBalance]);
 
   return (
-    <div className="bg-neutral-900 h-12">
+    <div className="bg-white h-12 rounded-lg border border-accent/50">
       <div className="w-full h-full flex-center gap-2">
-        <p className="text-sm font-semibold text-background/80">
+        <p className="text-sm font-semibold text-foreground/80">
           Your Balance :
         </p>
-        <div className="text-base font-semibold text-background font-display flex gap-2 justify-center items-center">
+        <div className="text-base font-semibold text-foreground font-display flex gap-2 justify-center items-center">
           <p>{balance}</p>
           {/* <span className="text-[9px] font-bold text-custom-yellow ">
             <span>O100K</span>
           </span> */}
 
           {/* todo add logo */}
-          <div className="w-9 h-9 rounded-full flex-center border border-neutral-700">
-            <XanopayLogoX className="!w-auto !h-4" />
+          <div className="w-9 h-9 rounded-full flex-center border border-accent/50 bg-background">
+            {/* <XanopayLogoX className="!w-auto !h-4" /> */}
+            <Image src={MonaMonkeyLogo} alt="MonaMonkeyLogo" className="w-7 h-auto" />
           </div>
         </div>
       </div>

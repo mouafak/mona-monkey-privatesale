@@ -2,22 +2,22 @@ import PrivateSaleForm from '@/components/private-sale/private-sale-form';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Only100KLogo from '../public/100kLogoBLue.png';
-import { XanopayLogo } from '@/components/xanopay-logos';
+import MonaMonkeyLogo from '@/public/MonaMonkeyLogo.png';
 
 export default function Home() {
   return (
-    <main className="flex-center bg-neutral-900 w-full h-screen">
+    <main className="flex-center bg-white w-full h-screen">
       <div className=" h-full w-full flex flex-col justify-between items-center">
-        <div className="h-full w-full bg-foreground max-h-20 ">
+        <div className="h-full w-full bg-background max-h-20 ">
           <div className="flex justify-between items-center container h-full px-4 lg:px-0  mx-auto">
-            <Link passHref href={'https://xanopay.com/'}>
-              <XanopayLogo className="!w-auto !h-10 md:w-32 md:h-32" />
+            <Link passHref href={'https://xanopay.com/'} className='flex items-center gap-2'>
+              <Image src={MonaMonkeyLogo} alt="MonaMonkeyLogo" className="w-14 h-auto md:w-18 md:h-auto" />
+              <h2 className='text-foreground text-md md:text-xl font-bold'>Mona Monkey</h2>
             </Link>
-            <Link href={'https://xanopay.com/'}>
+            <Link href={'https://monamoney.com/'}>
               <div className="flex gap-1 items-center">
-                <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 stroke-white " />
-                <p className="text-white text-sm md:text-base">Back to Home</p>
+                <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 stroke-foreground " />
+                <p className="text-foreground text-sm md:text-base font-semibold">Back to Home</p>
               </div>
             </Link>
           </div>
@@ -25,8 +25,8 @@ export default function Home() {
         <div className="w-full h-full flex-center ">
           <PrivateSaleForm />
         </div>
-        <div className="h-12 w-full bg-none bg-foreground flex-center text-sm text-background text-center">
-          © XanoPay 2025
+        <div className="h-12 w-full bg-none bg-background flex-center text-base text-foreground text-center">
+          © Mona Monkey 2026
         </div>
       </div>
     </main>

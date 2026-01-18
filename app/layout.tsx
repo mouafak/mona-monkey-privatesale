@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Providers from '@/lib/providers';
 import { Toaster } from 'sonner';
-import { jafBerninaSansNarrow } from './fonts';
+import { PlaypenSans } from './fonts';
 
 export const metadata: Metadata = {
-  title: 'XanoPay Private Sale',
-  description: 'XanoPay Private Sale',
+  title: 'Mona Monkey Private Sale',
+  description: 'Mona Monkey Private Sale',
 };
 
 export default function RootLayout({
@@ -15,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jafBerninaSansNarrow.className}`}>
+    <html lang="en" className={`${PlaypenSans.className}`}>
       <body className={` antialiased`}>
         <Providers>{children}</Providers>
-        <Toaster theme="dark" position="top-center" />
+        <Toaster theme="light" position="top-center" />
       </body>
     </html>
   );

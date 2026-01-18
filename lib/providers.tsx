@@ -14,7 +14,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   }
   return (
     <DynamicContextProvider
-      theme={'dark'}
+      theme={'light'}
       settings={{
         environmentId,
         walletConnectors: [SolanaWalletConnectors],

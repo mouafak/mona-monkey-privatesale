@@ -50,20 +50,20 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   return (
     <div className="flex center w-full">
       <div className="flex items-center justify-start pl-4 ">
-        <p className="text-accent text-sm">End in</p>
+        <p className="text-foreground text-sm">End in</p>
       </div>
       <div className="flex items-center justify-center gap-4 p-2 text-center flex-grow ">
         {Object.entries(timeLeft).map(([unit, value]) => (
           <div key={unit} className="flex flex-col items-center">
-            <span suppressHydrationWarning className="text-background">
+            <span suppressHydrationWarning className="text-foreground">
               {formatTime(value)}
             </span>
-            <span className="text-xs text-secondary">{unit}</span>
+            <span className="text-xs text-accent">{unit}</span>
           </div>
         ))}
       </div>
       <div className="flex-center pr-4 mt-1">
-        <Timer className="w-5 h-5 animate-bounce stroke-accent " />
+        <Timer className="w-5 h-5 animate-bounce stroke-foreground " />
       </div>
     </div>
   );

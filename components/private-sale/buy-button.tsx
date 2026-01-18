@@ -43,7 +43,7 @@ const ConnectWalletButton = () => {
     const balance = await primaryWallet?.getBalance();
     const handledBalance = balance ? Number(balance).toFixed(2) : '0';
     setWalletBalance(handledBalance);
-    // console.log(balance);
+    console.log(balance);
     return balance;
   };
 
@@ -113,6 +113,9 @@ const ConnectWalletButton = () => {
       let isConfirmed = null;
 
       while (Date.now() - startTime < confirmTimeout) {
+
+        await new Promise((resolve) => setTimeout(resolve, 5000)); // Poll every 5 seconds
+
         isConfirmed = await (await connection).getSignatureStatus(signature);
         if (
           isConfirmed.value &&
@@ -121,8 +124,6 @@ const ConnectWalletButton = () => {
           // console.log('Transaction confirmed');
           break;
         }
-        await new Promise((resolve) => setTimeout(resolve, 5000)); // Poll every 5 seconds
-
         // console.log('Polling for confirmation', isConfirmed);
       } // end while
 
