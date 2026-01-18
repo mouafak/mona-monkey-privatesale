@@ -10,11 +10,11 @@ export default function Home() {
       <div className=" h-full w-full flex flex-col justify-between items-center">
         <div className="h-full w-full bg-background max-h-20 ">
           <div className="flex justify-between items-center container h-full px-4 lg:px-0  mx-auto">
-            <Link passHref href={'https://xanopay.com/'} className='flex items-center gap-2'>
+            <Link passHref href={'https://monamonkey.com/'} className='flex items-center gap-2'>
               <Image src={MonaMonkeyLogo} alt="MonaMonkeyLogo" className="w-14 h-auto md:w-18 md:h-auto" />
               <h2 className='text-foreground text-md md:text-xl font-bold'>Mona Monkey</h2>
             </Link>
-            <Link href={'https://monamoney.com/'}>
+            <Link href={'https://monamonkey.com/'}>
               <div className="flex gap-1 items-center">
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 stroke-foreground " />
                 <p className="text-foreground text-sm md:text-base font-semibold">Back to Home</p>
