@@ -111,7 +111,7 @@ const Affiliate = () => {
           <DrawerHeader className="flex flex-col gap-2 w-full px-0 pt-10">
             <DrawerTitle className="flex justify-between items-center font-display uppercase">
               Affiliate Program
-              <div className="bg-primary text-background px-2 py-1 flex justify-center items-center gap-1 rounded text-xs font-normal tracking-widest">
+              <div className="bg-accent text-background px-2 py-1 flex justify-center items-center gap-1 rounded text-xs font-normal tracking-widest">
                 <CircleDollarSign className="w-4 h-4 animate-pulse" />
                 10% commission
               </div>
@@ -152,27 +152,22 @@ const Affiliate = () => {
                   )}
                 </Button>
               ) : (
-                <p className="text-xs bg-red-300 dark:bg-red-500 px-2 py-1 rounded-sm flex justify-center items-center w-full">
+                <p className="text-xs bg-accent/50 px-2 py-1 rounded-sm flex justify-center items-center w-full">
                   To request an affiliate link, you must have participated in
                   our private sale
                 </p>
               )}
             </div>
             <div className=" pb-2.5 flex justify-center items-center gap-4 w-full">
-              <div className="flex flex-col items-center justify-center space-x-2 border rounded w-full h-24">
+              <div className="flex flex-col items-center justify-center space-x-2 border border-accent/50 bg-white rounded w-full h-24">
                 <div className="text-4xl font-bold tracking-tighter">
-                  {isConnected
-                    ? primaryWallet?.address ==
-                      '382PVkJoGFAsqSsts1uvYftUDW5fzn9B9GU8s3JybaGD'
-                      ? (affiliateUserDetails?.length || 0) + 850
-                      : affiliateUserDetails?.length || 0
-                    : 0}
+                  {isConnected ? affiliateUserDetails?.length || 0 : 0}
                 </div>
-                <div className="text-[0.70rem] uppercase text-muted-foreground">
+                <div className="text-[0.70rem] uppercase text-muted-foreground font-semibold">
                   Link Used
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center space-x-2 border rounded w-full h-24">
+              <div className="flex flex-col items-center justify-center space-x-2 border border-accent/50 bg-white rounded w-full h-24">
                 <div className="text-4xl font-bold tracking-tighter px-2">
                   {(isConnected &&
                     affiliateUserDetails
@@ -184,7 +179,7 @@ const Affiliate = () => {
                       .toFixed(2)) ||
                     0}
                 </div>
-                <div className="text-[0.70rem] uppercase text-muted-foreground">
+                <div className="text-[0.70rem] uppercase text-muted-foreground font-semibold">
                   SOL Earned
                 </div>
               </div>
